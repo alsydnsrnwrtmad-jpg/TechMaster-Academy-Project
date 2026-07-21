@@ -1,0 +1,59 @@
+.DltCont {
+  display: none;
+}
+
+.DltCont.active {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.dltC {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var( --bg-mesh-1);
+  border-radius: 20px;
+  padding: 8px;
+  height: 125px;
+}
+.dltC div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.dltC div button {
+  width: 50%;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.dltC div button:hover {
+  transform: scale(1.03);
+}
+.no {
+  background-color: rgb(125, 214, 125);
+}
+.yes {
+  background-color: rgb(231, 131, 131);
+}
+
+@media (min-width: 768px) {
+  .dltC {
+    width: 455px;
+    padding: 15px;
+  }
+}
