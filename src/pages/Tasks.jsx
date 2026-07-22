@@ -76,7 +76,7 @@ const Tasks = () => {
         setfltr={setfltr}
         fltr={fltr}
       />
-      <h1 style={{ marginTop: "15px" }}>Tasks :</h1>
+      <h1>Tasks :</h1>
       <TheTasks
         filteredTasks={filteredTasks}
         dlt={dlt}

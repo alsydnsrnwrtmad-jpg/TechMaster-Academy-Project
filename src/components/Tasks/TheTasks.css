@@ -7,8 +7,9 @@
   --dltbrdr: #f5b7b1;
 }
 .NoTs {
-  margin-top: 10px;
-  padding-left: 5px;
+  color: #7a739f;
+  text-align: center;
+  font-size: 1.2rem;
 }
 ul {
   list-style: none;
@@ -90,7 +91,7 @@ ul {
 
 .lstTasks button:hover {
   background-color:var(--dltbg);
-  border-color: var(--dltbrdr);
+  border-color:var(--dltbrdr) ;
 }
 .prio {
   padding: 6px 10px;

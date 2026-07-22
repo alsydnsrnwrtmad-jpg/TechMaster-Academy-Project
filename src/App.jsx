@@ -5,6 +5,7 @@ import Landing, { VISITED_KEY } from "./pages/Landing.jsx";
 import PlaceholderPage from "./pages/PlaceholderPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Tasks from "./pages/Tasks";
+import Notes from "./pages/Notes";
 
 // First-time visitors are sent to /welcome (Landing) before the
 // Dashboard, matching the deck's Application Flow: Landing → Dashboard.
@@ -28,10 +29,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<DashboardEntry />} />
         <Route path="/tasks" element={<Tasks />} />
-        <Route
-          path="/notes"
-          element={<PlaceholderPage title="Notes" owner="Developer 2" />}
-        />
+        <Route path="/notes" element={<Notes />} />
         <Route
           path="/resources"
           element={<PlaceholderPage title="Resources" owner="Developer 3" />}
