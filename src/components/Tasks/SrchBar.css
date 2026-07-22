@@ -1,3 +1,8 @@
+.srchcont{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+
+}
 .srchlab {
   font-size:  14px ;
   font-weight:  600 ;
@@ -5,7 +10,8 @@
 }
 
 .cont {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .cont input {
   width:  100%;
@@ -17,4 +23,12 @@
   background-color:  #f8fafc ;
   margin-top:  5px ;
   color: #1e293b;
+}
+
+@media(min-width:768px){
+.srchcont{
+
+  grid-template-columns: 5fr 1fr;
+
+}
 }

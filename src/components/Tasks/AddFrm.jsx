@@ -1,7 +1,14 @@
 import React from "react";
 import "./Addfrm.css";
 
-const AddFrm = ({ addNewItem, frm, item, setNewItem, prio, setprio,pirori }) => {
+const AddFrm = ({
+  addNewItem,
+  frm,
+  item,
+  setNewItem,
+  prio,
+  setprio,
+}) => {
   return (
     <div className={`add-form ${frm ? "active" : ""}`}>
       <form onSubmit={addNewItem}>
@@ -22,9 +29,11 @@ const AddFrm = ({ addNewItem, frm, item, setNewItem, prio, setprio,pirori }) => 
             className="custom-select"
             required
             value={prio}
-            onChange={(e) => pirori(e.target.value)}
+            onChange={(e) => setprio(e.target.value)}
           >
-            <option value="" disabled>--Select an option--</option>
+            <option value="" disabled>
+              --Select an option--
+            </option>
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="High">High</option>

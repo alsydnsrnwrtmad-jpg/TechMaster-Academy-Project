@@ -9,6 +9,7 @@ const Tasks = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [frm, setfrm] = useState(false);
   const [prio, setprio] = useState("");
+  const [fltr, setfltr] = useState("");
   const [task, setTask] = useState(() => {
     const currentTask = localStorage.getItem("TASKS");
     return currentTask ? JSON.parse(currentTask) : [];
@@ -34,9 +35,15 @@ const Tasks = () => {
     setfrm(!frm);
     setprio("");
   };
-  const filteredTasks = task.filter((ele) =>
-    ele.value.toLowerCase().includes(searchTerm.toLowerCase()),
-  );
+  const filteredTasks = task.filter((ele) => {
+    const matchesSearch = ele.value
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+
+    const matchesFilter =
+      fltr === "" || ele.priority?.toLowerCase() === fltr.toLowerCase();
+    return matchesSearch && matchesFilter;
+  });
   const chkd = (id) => {
     setTask(
       task.map((ele) => {
@@ -50,9 +57,7 @@ const Tasks = () => {
   const dlt = (id) => {
     setTask(task.filter((ele) => ele.id !== id));
   };
-  const pirori = (e) => {
-    setprio(e);
-  };
+
   return (
     <>
       <ShwFrmbtn frm={frm} setfrm={setfrm} />
@@ -63,15 +68,21 @@ const Tasks = () => {
         setNewItem={setNewItem}
         setprio={setprio}
         prio={prio}
-        pirori={pirori}
       />
-      <SrchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <SrchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        prio={prio}
+        setfltr={setfltr}
+        fltr={fltr}
+      />
       <h1 style={{ marginTop: "15px" }}>Tasks :</h1>
       <TheTasks
         filteredTasks={filteredTasks}
         dlt={dlt}
         chkd={chkd}
         prio={prio}
+        fltr={fltr}
       />
     </>
   );

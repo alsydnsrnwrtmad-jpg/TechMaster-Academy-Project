@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Dltconfrm from "./dltconfrm";
 import "./TheTasks.css";
 
-const TheTasks = ({ filteredTasks, chkd, dlt }) => {
+const TheTasks = ({ filteredTasks, chkd, dlt, fltr }) => {
   const [delt, setdlt] = useState(false);
   const [dltID, setDltID] = useState("");
   const getID = (id) => {
