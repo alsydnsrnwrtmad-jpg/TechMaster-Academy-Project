@@ -37,9 +37,13 @@
   border-radius: 25%;
   transition: all 0.3s;
 }
-.fstline button:hover {
+.Dbtn:hover {
   background-color: var(--dltbg);
   border-color: var(--dltbrdr);
+}
+.Ebtn:hover {
+  background-color: var( --editbg);
+  border-color:var(--editbrdr);
 }
 .lstNotes {
   background-color: var(--sidebar-bg);

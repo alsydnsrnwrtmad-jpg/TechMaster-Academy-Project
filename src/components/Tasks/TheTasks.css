@@ -1,10 +1,14 @@
 :root {
   --dltbg: #f8b7b7;
   --dltbrdr: #e23626;
+  --editbg: rgba(3, 105, 161, 0.5);
+  --editbrdr: rgb(104, 104, 163);
 }
 [data-theme="dark"] {
   --dltbg: #650101;
   --dltbrdr: #f5b7b1;
+  --editbg: rgba(125, 211, 252, 0.5);
+  --editbrdr: rgb(149, 149, 188);
 }
 .NoTs {
   color: #7a739f;
@@ -22,7 +26,8 @@ ul {
 }
 
 .lstTasks {
-  display: flex;
+  display: grid;
+  grid-template-columns: 12fr 0.5fr 0.1fr;
   align-items: center;
   background-color: var(--surface);
   padding: 12px 16px;
@@ -88,11 +93,12 @@ ul {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
-.lstTasks button:hover {
-  background-color:var(--dltbg);
-  border-color:var(--dltbrdr) ;
+.task-content{
+  display: flex;
+  align-items: center;
 }
+
+
 .prio {
   padding: 6px 10px;
   border-radius: 20px;
@@ -106,4 +112,21 @@ ul {
 }
 .prio.High {
   background-color: rgb(239, 131, 131);
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+
+.edit-btn:hover {
+  background-color: var(--editbg);
+  border-color: var(--editbrdr);
+}
+
+.delete-btn:hover {
+  background-color: var(--dltbg);
+  border-color: var(--dltbrdr);
 }
