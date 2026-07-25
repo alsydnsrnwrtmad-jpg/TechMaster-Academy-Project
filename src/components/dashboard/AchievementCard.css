@@ -1,0 +1,37 @@
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-solid);
+  border: 1px solid var(--surface-border);
+  min-width: 190px;
+}
+
+.achievement__icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+}
+
+.achievement--locked {
+  opacity: 0.45;
+  filter: grayscale(0.6);
+}
+
+.achievement__title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.achievement__desc {
+  font-size: 11px;
+  color: var(--text-muted);
+}

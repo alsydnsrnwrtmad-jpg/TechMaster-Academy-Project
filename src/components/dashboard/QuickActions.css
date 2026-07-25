@@ -1,0 +1,42 @@
+.quick-actions h3 {
+  font-size: 15px;
+}
+
+.quick-actions__hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 4px 0 14px;
+}
+
+.quick-actions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-actions__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-solid);
+  border: 1px solid var(--surface-border);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: grab;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.quick-actions__item:hover {
+  transform: translateX(4px);
+  border-color: var(--primary);
+}
+
+.quick-actions__item--dragging {
+  opacity: 0.4;
+}
+
+.quick-actions__grip {
+  color: var(--text-muted);
+}

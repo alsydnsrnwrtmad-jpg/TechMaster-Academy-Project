@@ -1,0 +1,52 @@
+.floating-shapes {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+}
+
+.shape--one {
+  width: 380px;
+  height: 380px;
+  background: var(--bg-mesh-1);
+  top: -120px;
+  left: -80px;
+  animation: floatA 18s ease-in-out infinite;
+}
+
+.shape--two {
+  width: 320px;
+  height: 320px;
+  background: var(--bg-mesh-2);
+  bottom: -100px;
+  right: -60px;
+  animation: floatB 22s ease-in-out infinite;
+}
+
+.shape--three {
+  width: 220px;
+  height: 220px;
+  background: var(--primary-2);
+  opacity: 0.25;
+  top: 40%;
+  right: 20%;
+  animation: floatA 26s ease-in-out infinite reverse;
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.08); }
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -40px) scale(1.1); }
+}
