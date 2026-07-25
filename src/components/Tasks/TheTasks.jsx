@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaTrashAlt, FaEdit } from "react-icons/fa"; 
-import Dltconfrm from "./dltconfrm";
+import Dltconfrm from "./Dltconfrm";
 import "./TheTasks.css";
 
 const TheTasks = ({ filteredTasks, chkd, dlt, fltr, onEdit }) => {
