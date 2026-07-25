@@ -14,7 +14,6 @@ const Tasks = () => {
   const [fltr, setfltr] = useState("");
   const [editingTask, setEditingTask] = useState(null);
 
-  // 1. State واحدة فقط موحدة لتأسيس القائمة
   const [task, setTask] = useState(() => {
     const currentTask = localStorage.getItem("TASKS");
     return currentTask ? JSON.parse(currentTask) : [];
@@ -23,11 +22,14 @@ const Tasks = () => {
   useEffect(() => {
     localStorage.setItem("TASKS", JSON.stringify(task));
   }, [task]);
+  const totalTasks = task.length;
+  const completedTasks = task.filter((t) => t.completed).length;
+  const progressPercent =
+    totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
 
-  // 2. تحديث التعديل جوه نفس الـ State (task)
   const handleSaveTaskEdit = (updatedTask) => {
     setTask((prevTasks) =>
-      prevTasks.map((t) => (t.id === updatedTask.id ? updatedTask : t))
+      prevTasks.map((t) => (t.id === updatedTask.id ? updatedTask : t)),
     );
   };
 
@@ -63,8 +65,8 @@ const Tasks = () => {
   const chkd = (id) => {
     setTask(
       task.map((ele) =>
-        ele.id === id ? { ...ele, completed: !ele.completed } : ele
-      )
+        ele.id === id ? { ...ele, completed: !ele.completed } : ele,
+      ),
     );
   };
 
@@ -90,6 +92,23 @@ const Tasks = () => {
         setfltr={setfltr}
         fltr={fltr}
       />
+      {totalTasks > 0 && (
+        <div className="progress-container">
+          <div className="progress-text">
+            <span>Progress Status</span>
+            <span>
+              {completedTasks} of {totalTasks} completed ({progressPercent}%)
+            </span>
+          </div>
+          <div className="progress-bar-bg">
+            <div
+              className="progress-bar-fill"
+              style={{ width: `${progressPercent}%` }}
+            ></div>
+          </div>
+        </div>
+      )}
+
       <h1>Tasks :</h1>
       <TheTasks
         filteredTasks={filteredTasks}

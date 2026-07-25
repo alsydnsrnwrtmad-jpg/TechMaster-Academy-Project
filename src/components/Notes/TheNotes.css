@@ -62,3 +62,35 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+.lstNotes.pinned {
+  border: 1px solid #f59e0b;
+}
+
+.pin-icon-active {
+  color: #f59e0b;
+  font-size: 0.9rem;
+  margin-right: 6px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.PinCopyB:hover {
+  background-color: var( --surface-border);
+  border-color: grey;
+}

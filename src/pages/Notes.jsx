@@ -11,6 +11,11 @@ const Notes = () => {
   const [head, sethead] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [frm, setfrm] = useState(false);
+  const handleTogglePin = (id) => {
+    setNote((prevNotes) =>
+      prevNotes.map((n) => (n.id === id ? { ...n, pinned: !n.pinned } : n)),
+    );
+  };
 
   const [note, setNote] = useState(() => {
     const currentNote = localStorage.getItem("Notes");
@@ -24,8 +29,8 @@ const Notes = () => {
   const handleSaveEdit = (updatedItem) => {
     setNote((prevNotes) =>
       prevNotes.map((item) =>
-        item.id === updatedItem.id ? updatedItem : item
-      )
+        item.id === updatedItem.id ? updatedItem : item,
+      ),
     );
   };
 
@@ -77,6 +82,7 @@ const Notes = () => {
         filteredNotes={filteredNotes}
         dlt={dlt}
         onEdit={(item) => setEditingItem(item)}
+        onTogglePin={handleTogglePin}
       />
       <EditNotes
         isOpen={Boolean(editingItem)}
