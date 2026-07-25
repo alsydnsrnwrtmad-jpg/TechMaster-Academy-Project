@@ -1,0 +1,33 @@
+.fltcont {
+  display: flex;
+  justify-content: space-evenly;
+}
+.fltcont button {
+  padding: 6px 10px;
+  border-radius: 20px;
+  color: black;
+  margin-top: 25px;
+}
+
+.fltcont button {
+  padding: 6px 10px;
+  border-radius: 20px;
+  color: var(--text);
+  background-color: var(--surface);
+  border: none;
+  transition: 0.5s;
+}
+
+.lowbtn:hover,.lowbtn.Low {
+  background-color: rgb(169, 242, 185);
+  color: black;
+  transform: scale(1.1);
+}
+.medbtn:hover,.medbtn.Medium {
+  background-color: #f7efb4;
+  color: black;
+}
+.hibtn:hover,.hibtn.High {
+  background-color: rgb(239, 131, 131);
+  color: black;
+}

@@ -1,0 +1,96 @@
+:root {
+  --bx-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+[data-theme="dark"] {
+  --bx-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+}
+.NoNs {
+  color: #7a739f;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.NotesUl {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .NotesUl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.fstline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.fstline button {
+  border: 1px solid transparent;
+  padding: 5px;
+  background-color: var(--sidebar-bg);
+  border-radius: 25%;
+  transition: all 0.3s;
+}
+.Dbtn:hover {
+  background-color: var(--dltbg);
+  border-color: var(--dltbrdr);
+}
+.Ebtn:hover {
+  background-color: var( --editbg);
+  border-color:var(--editbrdr);
+}
+.lstNotes {
+  background-color: var(--sidebar-bg);
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+}
+.lstNotes:hover {
+  box-shadow: var(--bx-shadow);
+}
+.lstNotes p {
+  height: 150px;
+  padding: 10px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.lstNotes.pinned {
+  border: 1px solid #f59e0b;
+}
+
+.pin-icon-active {
+  color: #f59e0b;
+  font-size: 0.9rem;
+  margin-right: 6px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.PinCopyB:hover {
+  background-color: var( --surface-border);
+  border-color: grey;
+}

@@ -1,0 +1,21 @@
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+}
+
+.app-shell__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px clamp(16px, 4vw, 40px) 0;
+}
