@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./fltrTasks.css";
+import "./fltrtasks.css";
 
 const FltrTasks = ({setfltr,fltr}) => {
   return (
