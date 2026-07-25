@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaTrashAlt, FaEdit } from "react-icons/fa"; 
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Dltconfrm from "./Dltconfrm";
 import "./TheTasks.css";
 
@@ -32,20 +32,22 @@ const TheTasks = ({ filteredTasks, chkd, dlt, fltr, onEdit }) => {
                 </label>
               </div>
 
-              <span className={`prio ${ele.priority}`}>{ele.priority}</span>
+              <span className={`prio ${ele.priority}`}>
+                {ele.priority}
+              </span>
 
-        
               <div className="actions">
-                <button 
-                  className="edit-btn" 
-                  onClick={() => onEdit(ele)} 
+                <button
+                  className="edit-btn"
+                  onClick={() => onEdit(ele)}
                   title="Edit Task"
                 >
                   <FaEdit />
                 </button>
-                <button 
-                  className="delete-btn" 
-                  onClick={() => getID(ele.id)} 
+
+                <button
+                  className="delete-btn"
+                  onClick={() => getID(ele.id)}
                   title="Delete Task"
                 >
                   <FaTrashAlt />
@@ -55,7 +57,13 @@ const TheTasks = ({ filteredTasks, chkd, dlt, fltr, onEdit }) => {
           ))}
         </ul>
       )}
-      <Dltconfrm dlt={dlt} eID={dltID} delt={delt} setdlt={setdlt} />
+
+      <Dltconfrm
+        dlt={dlt}
+        eID={dltID}
+        delt={delt}
+        setdlt={setdlt}
+      />
     </>
   );
 };
